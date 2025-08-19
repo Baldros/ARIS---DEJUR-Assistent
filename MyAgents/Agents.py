@@ -41,7 +41,7 @@ from pydantic import BaseModel
 from typing import Optional
 
 # Aquisitando API KEY
-api_key = st.secrets("OPENAI_KEY")
+api_key = st.secrets["OPENAI_KEY"]
 
 # -------------------- Modelo de saída --------------------
 class LegalOutput(BaseModel):
@@ -110,3 +110,4 @@ IA_DEJUR = Team(
     response_model = LegalOutput,
 
     )
+
