@@ -1,10 +1,3 @@
-# Dependencias para setar ambiente correto
-import os
-import sys
-this_dir = os.path.dirname(os.path.abspath(__file__))        # .../V1/MyAgents
-parent_dir = os.path.abspath(os.path.join(this_dir, os.pardir))
-sys.path.insert(0, parent_dir)  # agora `V1` está no sys.path
-
 # Dependencias
 from agno.tools import tool
 from typing import Optional
@@ -86,3 +79,4 @@ def Send_Email(subject:str, message:str, html: Optional[bool] = None):
     except Exception as e:
 
         return f"Erro: {e}"
+
