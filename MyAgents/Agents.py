@@ -5,13 +5,6 @@ a título de velocidade, mas no futuro podemos modularizar em arquivos diferente
 como fazemos as funções e ferramentas.
 """
 
-# Dependencias para setar ambiente correto
-import os
-import sys
-this_dir = os.path.dirname(os.path.abspath(__file__))        # .../V1/MyAgents
-parent_dir = os.path.abspath(os.path.join(this_dir, os.pardir))
-sys.path.insert(0, parent_dir)  # agora `V1` está no sys.path
-
 # Dependencias para a construção do agente
 from agno.agent import Agent
 from agno.team import Team
@@ -109,4 +102,5 @@ IA_DEJUR = Team(
     description = aristoteles_behavior["description"],
     instructions = aristoteles_behavior["instructions"],
     response_model = LegalOutput,
+
     )
