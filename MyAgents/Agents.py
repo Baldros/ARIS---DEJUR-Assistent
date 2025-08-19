@@ -5,13 +5,6 @@ a título de velocidade, mas no futuro podemos modularizar em arquivos diferente
 como fazemos as funções e ferramentas.
 """
 
-# Dependencias para setar ambiente correto
-import os
-import sys
-this_dir = os.path.dirname(os.path.abspath(__file__))        # .../V1/MyAgents
-parent_dir = os.path.abspath(os.path.join(this_dir, os.pardir))
-sys.path.insert(0, parent_dir)  # agora `V1` está no sys.path
-
 # Dependencias para a construção do agente
 from agno.agent import Agent
 from agno.team import Team
@@ -21,10 +14,10 @@ import streamlit as st
 from agno.models.openai import OpenAIChat
 
 # Ferramentas
-from MyTools.FileTools import * # Ferramentas para manipulação de arquivos
-from MyTools.WebTools import * # Ferramentas para busca na internet
-from MyTools.EmailTools import *
-from MyTools.CLITools import *
+from FileTools import * # Ferramentas para manipulação de arquivos
+from WebTools import * # Ferramentas para busca na internet
+from EmailTools import *
+from CLITools import *
 from agno.tools.googlesearch import GoogleSearchTools # Ferramenta nativa para busca na internet (via texto apenas!)
 from agno.tools.arxiv import ArxivTools # Arxiv para buscas especializadas
 
@@ -108,6 +101,7 @@ IA_DEJUR = Team(
     description = aristoteles_behavior["description"],
     instructions = aristoteles_behavior["instructions"],
     response_model = LegalOutput,
-
+    parse_response=True,
     )
+
 
