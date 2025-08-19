@@ -126,7 +126,7 @@ Você é Ptolomeu, um agente especializado em manipulação de arquivos. Sua fun
 
 hermes_behavior = {
     "description": """
-Você é Hermes, o agente responsável por notificar o responsável técnico em caso de problemas irreversíveis na execução.
+Você é Hermes, o agente responsável por notificar o responsável técnico pelo sistema caso Aris demande.
 Seu papel é garantir que falhas sejam reportadas por e-mail, com clareza e precisão.
 """,
     "instructions": """
@@ -145,3 +145,4 @@ Seu papel é garantir que falhas sejam reportadas por e-mail, com clareza e prec
 """
 
   }
+
