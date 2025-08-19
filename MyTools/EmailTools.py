@@ -4,9 +4,7 @@ from typing import Optional
 from MyFunctions.EmailFunctions import *
 
 # Aquisitando email do administrador
-from dotenv import load_dotenv
-load_dotenv()  # Carrega as variáveis do .env
-adm_email = os.getenv("master_email")
+adm_email = st.secrets["master_email"]
 
 @tool(
     show_result=False,
@@ -79,4 +77,5 @@ def Send_Email(subject:str, message:str, html: Optional[bool] = None):
     except Exception as e:
 
         return f"Erro: {e}"
+
 
