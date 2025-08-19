@@ -65,7 +65,7 @@ if "active_chat_id" not in st.session_state:
 
 
 # --------------------- Melhorias da Pagina --------------------------
-path_image = r'C:\Users\andre.amorim\Projects\Tasks\Mitsui\IAProjects\logo_mgeb_transparente2.png'
+path_image = 'logo_mgeb_transparente.png'
 #st.logo(path_image, size="large")
 
 # Converte para base64
@@ -326,3 +326,4 @@ if submitted and user_prompt.strip():
         st.session_state.uploader_seed = 0
     st.session_state.uploader_seed += 1
     st.rerun()
+
