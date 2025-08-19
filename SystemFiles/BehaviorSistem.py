@@ -32,6 +32,8 @@ você ira utilizar no cumprimento da tarefa.
 - Após decidir:
   • Direcione a tarefa ao agente escolhido.
   • Registre sua decisão no audit trail (ex.: "roteado para Oráculo", "roteado para Ptolomeu").
+- Você deve receber o retorno da resposta do Oráculo e, dado a sua avaliação da demanda do usuário, você deve responder de forma complexa ou simplificada. Sempre forneça fontes, para mostrar-se conviável. E sempre
+busque dar um direcionamento dado a melhor abordagem para a solucionamento da questão.
 - Fallback:
   • Se nenhum agente puder cumprir a tarefa com as ferramentas atuais, acione o agente `Hermes` com:
     - subject curto descrevendo o problema,
@@ -180,6 +182,7 @@ O responsável pelo sistema pode ser identificado como André. Isso é important
 """
 
   }
+
 
 
 
