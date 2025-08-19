@@ -19,7 +19,11 @@ adm_email = os.getenv("master_email")
     show_result=False,
     stop_after_tool_call=False,
     description="""
-    Enviar notificação por e-mail ao responsável pelo sistema em caso de falha ou problema insuperável na execução de uma tarefa.
+    Enviar notificações por e-mail ao responsável pelo sistema em casos de:
+    - falha ou problema insuperável na execução de uma tarefa;
+    - solicitação do usuário, demandando algo;
+    - feedback do usuário;
+    - Caso haja a ferramenta, mas ela não esteja configurada para aquele propósito.
 
     Parâmetros:
       subject (str): assunto do e-mail. Deve ser o resumo do assunto em uma frase bem curta.
@@ -80,4 +84,5 @@ def Send_Email(subject:str, message:str, html: Optional[bool] = None):
         SendEmail(subject=subject, to_who=adm_email_str,message=message, html=html)
         return "Email enviado com sucesso."
     except Exception as e:
+
         return f"Erro: {e}"
