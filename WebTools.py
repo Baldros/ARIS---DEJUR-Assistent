@@ -1,12 +1,5 @@
-# Dependencias para setar ambiente correto
-import os
-import sys
-this_dir = os.path.dirname(os.path.abspath(__file__))        # .../V1/MyAgents
-parent_dir = os.path.abspath(os.path.join(this_dir, os.pardir))
-sys.path.insert(0, parent_dir)  # agora `V1` está no sys.path
-
 from agno.tools import tool
-from MyFunctions.WebFunctions import *
+from WebFunctions import *
 
 @tool(
     show_result=False,
@@ -42,4 +35,5 @@ def search_content_in_complex_site(url:str) -> str:
     """
     md_content = search_content_in_complex_site_logic(url)
     
+
     return md_content
