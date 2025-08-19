@@ -14,7 +14,6 @@ import streamlit as st
 from agno.models.openai import OpenAIChat
 
 # Ferramentas
-from FileTools import * # Ferramentas para manipulação de arquivos
 from WebTools import * # Ferramentas para busca na internet
 from EmailTools import *
 from CLITools import *
@@ -96,12 +95,13 @@ Hermes = Agent(
 IA_DEJUR = Team(
     name="Aris", 
     mode="coordinate",
-    members=[Oraculo, Ptolomeu, Hermes],
+    members=[Oraculo, Hermes],
     model= OpenAIChat(id="gpt-4o", api_key=api_key), # Platão
     description = aristoteles_behavior["description"],
     instructions = aristoteles_behavior["instructions"],
     response_model = LegalOutput,
     parse_response=True,
     )
+
 
 
