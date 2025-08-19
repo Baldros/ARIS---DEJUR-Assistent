@@ -1,7 +1,7 @@
 # Dependencias
 from agno.tools import tool
 from typing import Optional
-from MyFunctions.EmailFunctions import *
+from EmailFunctions import *
 
 # Aquisitando email do administrador
 adm_email = st.secrets["master_email"]
@@ -77,5 +77,6 @@ def Send_Email(subject:str, message:str, html: Optional[bool] = None):
     except Exception as e:
 
         return f"Erro: {e}"
+
 
 
