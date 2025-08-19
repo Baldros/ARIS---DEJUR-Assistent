@@ -50,7 +50,8 @@ st.set_page_config(
     page_icon="🤖",
     layout="wide",      # layout wide
     initial_sidebar_state="auto", 
-    menu_items=None
+    menu_items=None,
+    base = "light"
 )
 
 if "storage" not in st.session_state:  # NEW
@@ -326,4 +327,5 @@ if submitted and user_prompt.strip():
         st.session_state.uploader_seed = 0
     st.session_state.uploader_seed += 1
     st.rerun()
+
 
