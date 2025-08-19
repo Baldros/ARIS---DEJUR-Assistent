@@ -22,7 +22,7 @@ from agno.tools.arxiv import ArxivTools # Arxiv para buscas especializadas
 
 
 # Sistema de comportamento:
-from SystemFiles.BehaviorSistem import (aristoteles_behavior, # Comportamento do Team Leader
+from BehaviorSistem import (aristoteles_behavior, # Comportamento do Team Leader
                                         oraculo_behavior, # Comportamento do Agente de Pesquisa
                                         ptolomeu_behavior, # Comportamento do agente de tratamento de documentos
                                         hermes_behavior #  Comportamento do agente de mensageria
@@ -102,6 +102,7 @@ IA_DEJUR = Team(
     response_model = LegalOutput,
     parse_response=True,
     )
+
 
 
 
