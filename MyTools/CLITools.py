@@ -1,6 +1,6 @@
 from pathlib import Path
 from agno.tools import tool
-from MyFunctions.CLIFunctions import *
+from CLIFunctions import *
 
 @tool(
     show_result=False,
@@ -50,3 +50,4 @@ def serch_for_full_path(target:str) -> str:
     result = find_path_globally_logic(target)
 
     return result
+
