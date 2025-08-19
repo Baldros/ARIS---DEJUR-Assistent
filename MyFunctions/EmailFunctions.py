@@ -13,7 +13,7 @@ import streamlit as st
 # Aquisitando API KEY
 from dotenv import load_dotenv
 load_dotenv()  # Carrega as variáveis do .env
-email = st.secrets["master_email"]
+email = st.secrets["email"]
 app_key = st.secrets["app_key"]
 
 def SendEmail(subject:str, to_who:str, message:str, user: Optional[str] = email, senha: Optional[str] = app_key, html = None):
@@ -36,6 +36,7 @@ def SendEmail(subject:str, to_who:str, message:str, user: Optional[str] = email,
             senha_str = cast(str, senha)
             smtp.login(user_str, senha_str)      # usa App Password
             smtp.send_message(msg)
+
 
 
 
