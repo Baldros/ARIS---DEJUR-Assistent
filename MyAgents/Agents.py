@@ -15,6 +15,7 @@ sys.path.insert(0, parent_dir)  # agora `V1` está no sys.path
 # Dependencias para a construção do agente
 from agno.agent import Agent
 from agno.team import Team
+import streamlit as st
 
 # Modelo core do sistema
 from agno.models.openai import OpenAIChat
@@ -40,9 +41,7 @@ from pydantic import BaseModel
 from typing import Optional
 
 # Aquisitando API KEY
-from dotenv import load_dotenv
-load_dotenv()  # Carrega as variáveis do .env
-api_key = os.getenv("OPENAI_KEY")
+api_key = st.secrets("OPENAI_KEY")
 
 # -------------------- Modelo de saída --------------------
 class LegalOutput(BaseModel):
@@ -109,4 +108,5 @@ IA_DEJUR = Team(
     description = aristoteles_behavior["description"],
     instructions = aristoteles_behavior["instructions"],
     response_model = LegalOutput,
+
     )
