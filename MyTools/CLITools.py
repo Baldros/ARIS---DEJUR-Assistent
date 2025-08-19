@@ -1,10 +1,3 @@
-# Dependencias para setar ambiente correto
-import os
-import sys
-this_dir = os.path.dirname(os.path.abspath(__file__))        # .../V1/MyAgents
-parent_dir = os.path.abspath(os.path.join(this_dir, os.pardir))
-sys.path.insert(0, parent_dir)  # agora `V1` está no sys.path
-
 from pathlib import Path
 from agno.tools import tool
 from MyFunctions.CLIFunctions import *
@@ -55,4 +48,5 @@ def serch_for_full_path(target:str) -> str:
     """
 
     result = find_path_globally_logic(target)
+
     return result
