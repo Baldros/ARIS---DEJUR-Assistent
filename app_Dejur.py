@@ -4,7 +4,7 @@ Construção do app DEJUR.
 """
 
 # Dependencias:
-from MyAgents.Agents import IA_DEJUR
+from Agents import IA_DEJUR
 from agno.team import TeamRunResponse
 import streamlit as st
 import json
@@ -326,6 +326,7 @@ if submitted and user_prompt.strip():
         st.session_state.uploader_seed = 0
     st.session_state.uploader_seed += 1
     st.rerun()
+
 
 
 
