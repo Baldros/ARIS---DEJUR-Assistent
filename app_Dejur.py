@@ -68,42 +68,47 @@ if "active_chat_id" not in st.session_state:
 path_image = 'logo_mgeb_transparente.png'
 #st.logo(path_image, size="large")
 
-# Converte para base64
-with open(path_image, "rb") as f:
-    data = f.read()
-encoded = base64.b64encode(data).decode()
+st.html('''
+<style>
+         header[data-testid="stHeader"] {
+            background-color: #f0f2f6;
+            position: relative;
+        }
+ 
+        header::before {
+            content: "MITSUI GÁS AI";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            font-weight: bold;
+            color: White;
+        }
+  header.stAppHeader {
+    background-color: #D24334;
+    padding: 1rem 1.5rem;
+    font-size: 1.25rem;
+    font-family: 'Arial', sans-serif;
+    content: "Teste";
+  }
+  header.stAppHeader span,
+  header.stAppHeader svg {
+    color: white !important;
+  }
+  .rc-overflow {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -5rem;
+  }
+  .st-emotion-cache-77vupy {
+    background-color: white;
+    margin-left: 0rem;
+  }
+</style>
+''')
 
-col1, col2 = st.columns([1, 15])
-
-with col1:
-    st.image(path_image, width=100)
-
-with col2:
-    st.markdown(
-        f'''
-        <div style="
-            background-color:#D24334;
-            width:100%;
-            height:80px;
-            padding:0 20px;
-            display:flex;
-            align-items:center;
-            justify-content:flex-start;
-            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
-        ">
-            <h1 style="
-                color:white;
-                font-size:28px;
-                margin:0;
-                font-weight:600;
-                font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
-            ">
-                ARIS - IA DEJUR
-            </h1>
-        </div>
-        ''',
-        unsafe_allow_html=True
-    )
+st.logo(path_image, size = "large", link ="https://www.mitsuigas.com.br/site/pt/")
 # -------------------- Gate de Identificador --------------------  # NEW
 if not st.session_state.user_id:
     st.title("DEJUR — Identificador")
@@ -326,6 +331,7 @@ if submitted and user_prompt.strip():
         st.session_state.uploader_seed = 0
     st.session_state.uploader_seed += 1
     st.rerun()
+
 
 
 
